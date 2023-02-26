@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Lobster&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lobster', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.light-theme{
+  --background-color: #fff;
+  --text-color: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dark-theme{
+  --text-color: #fff;
+  --background-color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width:"100%"
+}
+
+.ImageGrid{
+  column-count: 4;
+  gap:"10px";
+  padding: 20px;
+}
+
+.ImageGrid > *{
+  break-inside: avoid;
+}
+
+.card{
+  border: 1px solid #E5E5E5;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.card img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card__details{
   display: flex;
   flex-direction: column;
+  padding: 8px;
+  background-color: #fff;
+}
+
+.card__details--upperbox{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.user__details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.user__name{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.user__instagram_id{
+  font-size: 0.8rem;
+}
+
+.user__tags{
+  padding: 2px;
+  margin-inline: 3px;
+  background-color: rgba(128, 128, 128, 0.263);
+}
+.header{
+  display: flex;
+  width: 100%;
+  padding: 10px 30px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo{
+  font-size: larger;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search{
+  display: flex;
+  width: 70%;
+  background-color: #E5E5E5;
+  color: grey;
+  padding: 5px 10px;
+  align-items: center;
+}
+
+.search__input_field{
+  width: 100%;
+  border: none;
+  outline: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .header{
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .ImageGrid{
+    column-count: 1;
+  }
+  .search{
+    width: 100%;
+    padding: 5px;
   }
 }
